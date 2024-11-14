@@ -15,7 +15,7 @@ void    test_list_indexOf_0(void)
     TEST_ASSERT_NOT_NULL(found);
     TEST_ASSERT_EQUAL_STRING("Hello", found->data);
 
-    list_destroy(list, free);
+    list_clear(&list, free);
 }
 
 void    test_list_indexOf_1(void)
@@ -28,8 +28,7 @@ void    test_list_indexOf_1(void)
     TEST_ASSERT_NOT_NULL(found);
     TEST_ASSERT_EQUAL_STRING("World", found->data);
     
-    list_destroy(list->next, free);
-    list_destroy(list, free);
+    list_clear(&list, free);
 }
 
 void    test_list_indexOf_invalid(void)
@@ -39,7 +38,7 @@ void    test_list_indexOf_invalid(void)
 
     TEST_ASSERT_NULL(found);
 
-    list_destroy(list, free);
+    list_clear(&list, free);
 }
 
 int main(void)

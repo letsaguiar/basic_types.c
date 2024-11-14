@@ -16,8 +16,7 @@ void    test_list_append(void)
     TEST_ASSERT_EQUAL_STRING("World", list->next->data);
     TEST_ASSERT_NULL(list->next->next);
 
-    list_destroy(list->next, free);
-    list_destroy(list, free);
+    list_clear(&list, free);
 }
 
 void    test_list_append_two(void)
@@ -32,9 +31,7 @@ void    test_list_append_two(void)
     TEST_ASSERT_EQUAL_STRING("!", list->next->next->data);
     TEST_ASSERT_NULL(list->next->next->next);
 
-    list_destroy(list->next->next, free);
-    list_destroy(list->next, free);
-    list_destroy(list, free);
+    list_clear(&list, free);
 }
 
 int main(void)

@@ -15,7 +15,7 @@ void    test_list_create(void)
     TEST_ASSERT_EQUAL_STRING("Hello World", list->data);
     TEST_ASSERT_NULL(list->next);
 
-    list_destroy(list, free);
+    list_clear(&list, free);
 }
 
 int main(void)

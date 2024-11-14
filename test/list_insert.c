@@ -18,8 +18,7 @@ void    test_list_insert_0(void)
     TEST_ASSERT_EQUAL_STRING("Hello", list->next->data);
     TEST_ASSERT_NULL(list->next->next);
 
-    list_destroy(list->next, free);
-    list_destroy(list, free);
+    list_clear(&list, free);
 }
 
 void    test_list_insert_1(void)
@@ -33,8 +32,7 @@ void    test_list_insert_1(void)
     TEST_ASSERT_EQUAL_STRING("World", list->next->data);
     TEST_ASSERT_NULL(list->next->next);
 
-    list_destroy(list->next, free);
-    list_destroy(list, free);
+    list_clear(&list, free);
 }
 
 void    test_list_insert_invalid(void)
@@ -45,7 +43,7 @@ void    test_list_insert_invalid(void)
     TEST_ASSERT_EQUAL_STRING("Hello", list->data);
     TEST_ASSERT_NULL(list->next);
 
-    list_destroy(list, free);
+    list_clear(&list, free);
 }
 
 int     main(void)

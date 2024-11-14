@@ -24,7 +24,7 @@ void    test_list_remove_1(void)
     TEST_ASSERT_EQUAL_STRING("Hello", list->data);
     TEST_ASSERT_NULL(list->next);
 
-    list_destroy(list, free);
+    list_clear(&list, free);
 }
 
 void    test_list_remove_invalid(void)
@@ -35,7 +35,7 @@ void    test_list_remove_invalid(void)
     TEST_ASSERT_EQUAL_STRING("Hello", list->data);
     TEST_ASSERT_NULL(list->next);
 
-    list_destroy(list, free);
+    list_clear(&list, free);
 }
 
 int     main(void)
