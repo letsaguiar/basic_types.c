@@ -13,10 +13,7 @@ int list_insert(t_list **list, t_data data, int index, void (*destroy)(t_data))
         return (1);
     }
 
-    t_list *tmp = *list;
-    for (int i = 0; tmp && i < index - 1; i++)
-        tmp = tmp->next;
-
+    t_list *tmp = list_get(*list, index - 1);
     if (!tmp)
     {
         list_destroy(new, destroy);
