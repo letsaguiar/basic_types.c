@@ -29,8 +29,8 @@ t_list  *list_indexOf(t_list *list, t_data data, int (*compare)(t_data, t_data))
 
 int     list_size(t_list *list);
 
-void    list_foreach(t_list *list, void (*f)(t_data));
+void    list_foreach(t_list *list, void (*f)(t_data, int));
 
-t_list  *list_map(t_list *list, t_data (*f)(t_data));
+t_list  *list_map(t_list *list, t_data (*f)(t_data, int));
 
 #endif
