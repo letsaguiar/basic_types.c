@@ -36,14 +36,13 @@ t_list  *list_map(t_list *list, t_data (*f)(t_data, int));
 typedef struct s_stack
 {
     t_list  *head;
-    t_list  *tail;
 } t_stack;
 
 t_stack *stack_create();
 
-void    stack_destroy(t_stack *stack, void (*destroy)(t_data));
+void    stack_clear(t_stack *stack, void (*destroy)(t_data));
 
-int     stack_push(t_stack *stack, t_data data);
+int     stack_push(t_stack *stack, t_data data, void (*destroy)(t_data));
 
 t_data  stack_pop(t_stack *stack);
 

@@ -5,7 +5,7 @@ export ROOT_DIR=$(pwd)
 
 # Compiler Configuration
 export CC="gcc"
-export CFLAGS="-Wall -Wextra -Werror -g -fsanitize=address"
+export CFLAGS="-Wall -Wextra -Werror -g -fsanitize=address -DUNITY_OUTPUT_COLOR"
 
 # File Configuration
 export SRC_DIR="${ROOT_DIR}/src"
