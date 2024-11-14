@@ -21,4 +21,6 @@ t_list  *list_last(t_list *list);
 
 t_list  *list_get(t_list *list, int index);
 
+t_list  *list_indexOf(t_list *list, t_data data, int (*compare)(t_data, t_data));
+
 #endif
