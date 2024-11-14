@@ -12,8 +12,9 @@ export SRC_DIR="${ROOT_DIR}/src"
 export SRC_FILES=$(find ${SRC_DIR} -name "*.c")
 export SRC_INCLUDES="-I${SRC_DIR}"
 
+export TEST_WILDCARD="*$1*"
 export TEST_DIR="${ROOT_DIR}/test"
-export TEST_FILES=$(find ${TEST_DIR} -name "*.c")
+export TEST_FILES=$(find ${TEST_DIR} -name "$TEST_WILDCARD.c")
 
 export UNITY_DIR="${ROOT_DIR}/unity"
 export UNITY_FILES=$(find ${UNITY_DIR} -name "*.c")
