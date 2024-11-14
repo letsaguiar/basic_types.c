@@ -19,10 +19,14 @@ int     list_insert(t_list **list, t_data data, int index, void (*destroy)(t_dat
 
 void    list_remove(t_list **list, int index, void (*destroy)(t_data));
 
+void    list_clear(t_list **list, void (*destroy)(t_data));
+
 t_list  *list_last(t_list *list);
 
 t_list  *list_get(t_list *list, int index);
 
 t_list  *list_indexOf(t_list *list, t_data data, int (*compare)(t_data, t_data));
+
+int     list_size(t_list *list);
 
 #endif
