@@ -17,6 +17,8 @@ int     list_append(t_list **list, t_data data);
 
 int     list_insert(t_list **list, t_data data, int index, void (*destroy)(t_data));
 
+void    list_remove(t_list **list, int index, void (*destroy)(t_data));
+
 t_list  *list_last(t_list *list);
 
 t_list  *list_get(t_list *list, int index);
