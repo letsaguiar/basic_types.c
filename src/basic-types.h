@@ -68,4 +68,25 @@ t_data  queue_peek(t_queue *queue);
 
 int     queue_size(t_queue *queue);
 
+# define DICT_CAPACITY 13
+
+typedef struct s_dict
+{
+    t_list **buckets;
+    int    capacity;
+    int    load_factor;
+} t_dict;
+
+typedef struct s_dict_data
+{
+    const char *key;
+    t_data     value;
+} t_dict_data;
+
+int    dict_hash(t_dict *dict, const char *key);
+
+t_dict *dict_create();
+
+void    dict_clear(t_dict *dict, void (*destroy)(t_data));
+
 #endif
