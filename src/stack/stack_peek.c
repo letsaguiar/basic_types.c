@@ -3,7 +3,8 @@
 
 t_data  stack_peek(t_stack *stack)
 {
-    if (stack->head == NULL)
+    if (!stack || !stack->head)
         return (NULL);
+
     return (stack->head->data);
 }

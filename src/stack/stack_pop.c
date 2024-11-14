@@ -3,7 +3,7 @@
 
 t_data stack_pop(t_stack *stack)
 {
-    if (!stack->head)
+    if (!stack || !stack->head)
         return (NULL);
 
     t_list *head = stack->head;
