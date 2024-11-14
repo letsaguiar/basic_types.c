@@ -38,7 +38,7 @@ void    test_queue_enqueue_two(void)
     queue_enqueue(queue, data2);
 
     TEST_ASSERT_EQUAL_INT(1, *(int*)queue->head->data);
-    TEST_ASSERT_EQUAL_INT(1, *(int*)queue->tail->data);
+    TEST_ASSERT_EQUAL_INT(2, *(int*)queue->tail->data);
 
     queue_clear(queue, free);
 }
@@ -60,7 +60,7 @@ void    test_queue_enqueue_three(void)
     queue_enqueue(queue, data3);
 
     TEST_ASSERT_EQUAL_INT(1, *(int*)queue->head->data);
-    TEST_ASSERT_EQUAL_INT(2, *(int*)queue->tail->data);
+    TEST_ASSERT_EQUAL_INT(3, *(int*)queue->tail->data);
 
     queue_clear(queue, free);
 }
