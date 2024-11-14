@@ -50,4 +50,22 @@ t_data  stack_peek(t_stack *stack);
 
 int     stack_size(t_stack *stack);
 
+typedef struct s_queue
+{
+    t_list  *head;
+    t_list  *tail;
+} t_queue;
+
+t_queue *queue_create();
+
+void    queue_clear(t_queue *queue, void (*destroy)(t_data));
+
+int     queue_enqueue(t_queue *queue, t_data data);
+
+t_data  queue_dequeue(t_queue *queue);
+
+t_data  queue_peek(t_queue *queue);
+
+int     queue_size(t_queue *queue);
+
 #endif
