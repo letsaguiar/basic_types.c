@@ -1,7 +1,10 @@
 #ifndef BASIC_TYPES_H
 # define BASIC_TYPES_H
 
-# define _POSIX_C_SOURCE 200809L
+#define _POSIX_C_SOURCE 200809L
+
+# define BASIC_TYPES_FAILURE 0
+# define BASIC_TYPES_SUCCESS 1
 
 typedef void* t_data;
 
