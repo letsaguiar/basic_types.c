@@ -95,4 +95,6 @@ int     dict_set(t_dict *dict, const char *key, t_data value);
 
 t_data  dict_get(t_dict *dict, const char *key);
 
+void    dict_remove(t_dict *dict, const char *key, void (*destroy)(t_data));
+
 #endif
