@@ -1,5 +1,11 @@
 {
     "files.associations": {
-        "basic-types.h": "c"
+        "basic-types.h": "c",
+        "algorithm": "c",
+        "*.tcc": "c",
+        "memory": "c",
+        "new": "c",
+        "numeric": "c",
+        "system_error": "c"
     }
 }

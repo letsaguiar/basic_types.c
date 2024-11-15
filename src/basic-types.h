@@ -93,4 +93,6 @@ void    dict_clear(t_dict *dict, void (*destroy)(t_data));
 
 int     dict_set(t_dict *dict, const char *key, t_data value);
 
+t_data  dict_get(t_dict *dict, const char *key);
+
 #endif
