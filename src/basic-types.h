@@ -103,4 +103,6 @@ int     dict_size(t_dict *dict);
 
 char    **dict_keys(t_dict *dict);
 
+t_data  *dict_values(t_dict *dict, t_data (*duplicate)(t_data));
+
 #endif
