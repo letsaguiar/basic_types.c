@@ -22,7 +22,7 @@ void    test_stack_peek_one(void)
     int *data = malloc(sizeof(int));
     *data = 1;
 
-    stack_push(stack, data, free);
+    stack_push(stack, data);
 
     TEST_ASSERT_EQUAL_INT(*data, *(int *)stack_peek(stack));
 
@@ -38,8 +38,8 @@ void    test_stack_peek_two(void)
     int *data2 = malloc(sizeof(int));
     *data2 = 2;
 
-    stack_push(stack, data1, free);
-    stack_push(stack, data2, free);
+    stack_push(stack, data1);
+    stack_push(stack, data2);
 
     TEST_ASSERT_EQUAL_INT(*data2, *(int *)stack_peek(stack));
 
@@ -57,9 +57,9 @@ void    test_stack_peek_three(void)
     int *data3 = malloc(sizeof(int));
     *data3 = 3;
 
-    stack_push(stack, data1, free);
-    stack_push(stack, data2, free);
-    stack_push(stack, data3, free);
+    stack_push(stack, data1);
+    stack_push(stack, data2);
+    stack_push(stack, data3);
 
     TEST_ASSERT_EQUAL_INT(*data3, *(int *)stack_peek(stack));
 

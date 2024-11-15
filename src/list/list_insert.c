@@ -1,6 +1,7 @@
 #include "basic-types.h"
+#include <stdlib.h>
 
-int list_insert(t_list **list, t_data data, int index, void (*destroy)(t_data))
+int list_insert(t_list **list, t_data data, int index)
 {
     t_list *new = list_create(data);
     if (!new)
@@ -16,7 +17,7 @@ int list_insert(t_list **list, t_data data, int index, void (*destroy)(t_data))
     t_list *tmp = list_get(*list, index - 1);
     if (!tmp)
     {
-        list_destroy(new, destroy);
+        free(new);
         return (0);
     }
 

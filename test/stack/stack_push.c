@@ -13,7 +13,7 @@ void    test_stack_push_one(void)
     int *data = malloc(sizeof(int));
     *data = 1;
 
-    TEST_ASSERT_EQUAL_INT(1, stack_push(stack, data, free));
+    TEST_ASSERT_EQUAL_INT(1, stack_push(stack, data));
     TEST_ASSERT_EQUAL_INT(*data, *(int *)stack->head->data);
 
     stack_clear(stack, free);
@@ -28,8 +28,8 @@ void    test_stack_push_two(void)
     int *data2 = malloc(sizeof(int));
     *data2 = 2;
 
-    TEST_ASSERT_EQUAL_INT(1, stack_push(stack, data1, free));
-    TEST_ASSERT_EQUAL_INT(1, stack_push(stack, data2, free));
+    TEST_ASSERT_EQUAL_INT(1, stack_push(stack, data1));
+    TEST_ASSERT_EQUAL_INT(1, stack_push(stack, data2));
     TEST_ASSERT_EQUAL_INT(*data2, *(int *)stack->head->data);
 
     stack_clear(stack, free);
@@ -46,9 +46,9 @@ void    test_stack_push_three(void)
     int *data3 = malloc(sizeof(int));
     *data3 = 3;
 
-    TEST_ASSERT_EQUAL_INT(1, stack_push(stack, data1, free));
-    TEST_ASSERT_EQUAL_INT(1, stack_push(stack, data2, free));
-    TEST_ASSERT_EQUAL_INT(1, stack_push(stack, data3, free));
+    TEST_ASSERT_EQUAL_INT(1, stack_push(stack, data1));
+    TEST_ASSERT_EQUAL_INT(1, stack_push(stack, data2));
+    TEST_ASSERT_EQUAL_INT(1, stack_push(stack, data3));
     TEST_ASSERT_EQUAL_INT(*data3, *(int *)stack->head->data);
 
     stack_clear(stack, free);

@@ -21,7 +21,7 @@ void    test_stack_pop_one(void)
     
     int *data = malloc(sizeof(int));
     *data = 1;
-    stack_push(stack, data, free);
+    stack_push(stack, data);
 
     int *pop = stack_pop(stack);
 
@@ -38,11 +38,11 @@ void    test_stack_pop_two(void)
     
     int *data1 = malloc(sizeof(int));
     *data1 = 1;
-    stack_push(stack, data1, free);
+    stack_push(stack, data1);
 
     int *data2 = malloc(sizeof(int));
     *data2 = 2;
-    stack_push(stack, data2, free);
+    stack_push(stack, data2);
 
     int *pop = stack_pop(stack);
 
@@ -59,13 +59,13 @@ void    test_stack_pop_three(void)
     
     int *data1 = malloc(sizeof(int));
     *data1 = 1;
-    stack_push(stack, data1, free);
+    stack_push(stack, data1);
     int *data2 = malloc(sizeof(int));
     *data2 = 2;
-    stack_push(stack, data2, free);
+    stack_push(stack, data2);
     int *data3 = malloc(sizeof(int));
     *data3 = 3;
-    stack_push(stack, data3, free);
+    stack_push(stack, data3);
 
     int *pop = stack_pop(stack);
 

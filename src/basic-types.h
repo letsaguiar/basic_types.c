@@ -15,7 +15,7 @@ void    list_destroy(t_list *list, void (*destroy)(t_data));
 
 int     list_append(t_list **list, t_data data);
 
-int     list_insert(t_list **list, t_data data, int index, void (*destroy)(t_data));
+int     list_insert(t_list **list, t_data data, int index);
 
 void    list_remove(t_list **list, int index, void (*destroy)(t_data));
 
@@ -42,7 +42,7 @@ t_stack *stack_create();
 
 void    stack_clear(t_stack *stack, void (*destroy)(t_data));
 
-int     stack_push(t_stack *stack, t_data data, void (*destroy)(t_data));
+int     stack_push(t_stack *stack, t_data data);
 
 t_data  stack_pop(t_stack *stack);
 

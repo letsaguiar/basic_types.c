@@ -10,7 +10,7 @@ void tearDown(void) { }
 void    test_list_insert_0(void)
 {
     t_list *list = list_create(strdup("Hello"));
-    list_insert(&list, strdup("World"), 0, free);
+    list_insert(&list, strdup("World"), 0);
 
     TEST_ASSERT_NOT_NULL(list);
     TEST_ASSERT_EQUAL_STRING("World", list->data);
@@ -24,7 +24,7 @@ void    test_list_insert_0(void)
 void    test_list_insert_1(void)
 {
     t_list *list = list_create(strdup("Hello"));
-    list_insert(&list, strdup("World"), 1, free);
+    list_insert(&list, strdup("World"), 1);
 
     TEST_ASSERT_NOT_NULL(list);
     TEST_ASSERT_EQUAL_STRING("Hello", list->data);
@@ -38,11 +38,15 @@ void    test_list_insert_1(void)
 void    test_list_insert_invalid(void)
 {
     t_list *list = list_create(strdup("Hello"));
-    TEST_ASSERT_EQUAL_INT(0, list_insert(&list, strdup("World"), 2, free));
+    char *data = strdup("World");    
+
+
+    TEST_ASSERT_EQUAL_INT(0, list_insert(&list, data, 2));
     TEST_ASSERT_NOT_NULL(list);
     TEST_ASSERT_EQUAL_STRING("Hello", list->data);
     TEST_ASSERT_NULL(list->next);
 
+    free(data);
     list_clear(&list, free);
 }
 
