@@ -97,4 +97,6 @@ t_data  dict_get(t_dict *dict, const char *key);
 
 void    dict_remove(t_dict *dict, const char *key, void (*destroy)(t_data));
 
+int     dict_size(t_dict *dict);
+
 #endif
