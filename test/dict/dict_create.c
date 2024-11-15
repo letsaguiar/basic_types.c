@@ -13,8 +13,8 @@ void    test_dict_create(void)
 
     TEST_ASSERT_NOT_NULL(dict);
     TEST_ASSERT_NOT_NULL(dict->buckets);
+    TEST_ASSERT_EQUAL_INT(0, dict->size);
     TEST_ASSERT_EQUAL_INT(DICT_CAPACITY, dict->capacity);
-    TEST_ASSERT_EQUAL_INT(0, dict->load_factor);
 
     for (int i = 0; i < DICT_CAPACITY; i++)
         TEST_ASSERT_NOT_NULL(dict->buckets[i]);

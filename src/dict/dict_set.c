@@ -4,7 +4,7 @@
 
 int dict_set(t_dict *dict, const char *key, t_data value)
 {
-    if (!dict || !key)
+    if (!dict || !key || dict_get(dict, key))
         return (0);
     
     int hash = dict_hash(dict, key);
