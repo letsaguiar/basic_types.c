@@ -35,6 +35,8 @@ void    list_foreach(t_list *list, void (*f)(t_data, int));
 
 t_list  *list_map(t_list *list, t_data (*f)(t_data, int));
 
+t_data  *list_toArray(t_list *list, t_data (*duplicate)(t_data));
+
 typedef struct s_stack
 {
     t_list  *head;
@@ -98,5 +100,7 @@ t_data  dict_get(t_dict *dict, const char *key);
 void    dict_remove(t_dict *dict, const char *key, void (*destroy)(t_data));
 
 int     dict_size(t_dict *dict);
+
+char    **dict_keys(t_dict *dict);
 
 #endif
