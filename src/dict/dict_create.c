@@ -7,8 +7,8 @@ t_dict  *dict_create()
     if (!dict)
         return (NULL);
 
+    dict->size = 0;
     dict->capacity = DICT_CAPACITY;
-    dict->load_factor = 0;
 
     dict->buckets = malloc(DICT_CAPACITY * sizeof(t_list *));
     if (!dict->buckets)

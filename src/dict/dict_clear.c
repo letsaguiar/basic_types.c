@@ -3,8 +3,9 @@
 
 void    dict_clear(t_dict *dict, void (*destroy)(t_data))
 {
-    if (dict == NULL)
+    if (!dict)
         return ;
+
     for (int i = 0; i < dict->capacity; i++)
         if (dict->buckets[i])
         {

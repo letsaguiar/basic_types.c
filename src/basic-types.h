@@ -1,6 +1,8 @@
 #ifndef BASIC_TYPES_H
 # define BASIC_TYPES_H
 
+# define _POSIX_C_SOURCE 200809L
+
 typedef void* t_data;
 
 typedef struct s_list
@@ -73,8 +75,8 @@ int     queue_size(t_queue *queue);
 typedef struct s_dict
 {
     t_list **buckets;
+    int    size;
     int    capacity;
-    int    load_factor;
 } t_dict;
 
 typedef struct s_dict_data
@@ -88,5 +90,7 @@ int    dict_hash(t_dict *dict, const char *key);
 t_dict *dict_create();
 
 void    dict_clear(t_dict *dict, void (*destroy)(t_data));
+
+int     dict_set(t_dict *dict, const char *key, t_data value);
 
 #endif
